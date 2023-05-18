@@ -91,3 +91,50 @@ To run this application, make sure you have Python and Flask installed on your c
 
 ## Reference
 - [Dijkstra's Algorithm - Wikipedia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+
+# Templates Folder
+
+## Description
+`index.html` is an HTML template file used to display a web page in an application that calculates the minimum distance between two points on a graph using the Dijkstra algorithm.
+
+### Form
+```html
+<form method="POST" class="mt-4">
+    <div class="mb-3">
+        <label for="" class="form-label">Titik Awal:</label>
+        <input type="text" class="form-control" id="start" name="start" required>
+    </div>
+    <div class="mb-3">
+        <label for="end" class="form-label">Titik Akhir:</label>
+        <input type="text" class="form-control" id="end" name="end" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Hitung Jarak</button>
+</form>
+```
+In this section, we define a form that will be used to enter the starting and ending points on the graph. This form will be sent to the server when the user clicks the "Hitung Jarak" button.
+
+### Alert
+```html
+{% if shortest_distance %}
+    <div class="alert alert-success mt-4" role="alert">
+        Jarak minimum: {{ shortest_distance }}
+    </div>
+{% endif %}
+```
+In this section, we display the result of the minimum distance calculation on the web page using an alert. This alert will only be displayed if the `shortest_distance` variable has a value (i.e., if the user has submitted the form).
+
+### Bootstrap
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+```
+In this section, we import the Bootstrap library to enhance the appearance of the web page. We also import the JavaScript files required by Bootstrap.
+
+## The implementation used 
+- HTML
+- Bootstrap
+
+## References
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- [HTML Tutorial - W3Schools](https://www.w3schools.com/html/)
